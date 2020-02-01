@@ -38,11 +38,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const server = app.listen(PORT, () => {
-  // eslint-disable-next-line
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
-
 // Dynamically force schema refresh only for 'test'
 const FORCE_SCHEMA = process.env.NODE_ENV === 'test';
 
