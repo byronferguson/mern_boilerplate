@@ -9,13 +9,16 @@ passport.use(new LocalStrategy(
     usernameField: 'email',
   },
   async (email, password, done) => {
-
     // When a user tries to sign in this code runs
 
-    // Login failed
-    return done(null, false, {
-      message: 'Invalid user details',
-    });
+    const isloginSuccessful = false;
+
+    if (!isloginSuccessful) {
+      // Login failed
+      return done(null, false, {
+        message: 'Invalid user details',
+      });
+    }
 
     // Login success
     return done(null, user);
