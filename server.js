@@ -45,8 +45,11 @@ db.sequelize
   .authenticate()
   .then(() => {
     db.sequelize.sync({ force: FORCE_SCHEMA }).then(() => {
-      console.log(`🌎 ==> API server now on port ${PORT}!`); // eslint-disable-line no-console
-      app.emit('appStarted');
+      app.listen(PORT, err => {
+        if (err) throw err;
+        console.log(`Server is Ready and Listening on http://localhost: ${PORT}`); // eslint-disable-line no-console
+        app.emit('appStarted');
+      });
     });
   })
   .catch(console.error); // eslint-disable-line no-console
