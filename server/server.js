@@ -19,11 +19,11 @@ app.use(helmet());
 app.use(session({ secret: 'TBD', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../client/build'));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
 // Add routes, API
