@@ -17,7 +17,8 @@
     "client": "cd client && npm run start",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\""
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
+    "test": "echo \"hello world\""
   },
   "nodemonConfig": {
     "delay": "2500",
